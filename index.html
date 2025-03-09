@@ -8,6 +8,8 @@
     <style>
         body {
             transition: background-color 0.3s, color 0.3s;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
         }
         .dark-mode {
             background-color: #121212;
@@ -15,57 +17,115 @@
         }
         .banner-container {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .banner {
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .toggle-btn {
             position: fixed;
             top: 15px;
             right: 15px;
             z-index: 1000;
+            border-radius: 20px;
         }
-        iframe {
+        .navbar {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+        }
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+            text-align: center;
             width: 100%;
-            height: 500px;
+        }
+        .info-container {
+            text-align: center;
+            background: rgb(20,7,232);
+            background: linear-gradient(99deg, rgba(20,7,232,0.6078080890559349) 0%, rgba(0,212,255,0.7982842795321253) 100%);
+
+            padding: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80vh;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .iframe-container iframe {
+            width: 48%;
+            min-height: 74vh;
+            max-width: 650px;
             border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            margin: 0 1%;
         }
-        @media (max-width: 768px) {
-            iframe {
-                height: 400px;
-            }
-        }
-        @media (max-width: 480px) {
-            iframe {
-                height: 300px;
-            }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <button class="btn btn-dark toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
-    
+
     <div class="banner-container">
         <img src="https://nitw.ac.in/api/static/files/welcome_to_NIT_WARANGAL_2023-4-15-16-35-49.jpg" class="img-fluid banner" alt="NIT Warangal">
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><b>NIT Warangal E-Sarthee (e-Van) Location Tracking</b></a>
+    <nav class="navbar navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid text-center">
+            <a class="navbar-brand" href="#">NIT Warangal E-Sarthee (e-Van) Location Tracking System</a>
         </div>
     </nav>
-   
-    <div class="container mt-4">
-        <iframe src="https://purush-project1esartheenitw.web.val.run/?view=e816a051-3f44-4165-9248-699fba1c2076"></iframe>
+
+    <div class="info-container">
+       I know there's still a lot to improve on this web page, and we'll reach that level soon. 
+       <b>This page is currently under trial by Purushottam Gurjar</b>, and many improvements are on the way.
     </div>
     
+    <div class="info-container">
+      Always have a look on Last Updated location , as Drivers might had put their location off.<br />
+      For Suggestions -><a href=" purushottamgurjar58@gmail.com"> purushottamgurjar58@gmail.com</a>
+    </div>
+
+    <div class="iframe-container mt-4">
+        <iframe src="https://purush-project1esartheenitw.web.val.run/?view=e816a051-3f44-4165-9248-699fba1c2076"></iframe>
+        <iframe src="https://purush-project1esartheenitw.web.val.run/?view=e816a051-3f44-4165-9248-699fba1c2076"></iframe>
+    </div>
+
+    <footer>
+        &copy; 2025 Purushottam Gurjar.  All Rights Reserved.
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
+        
+        function checkDesktopMode() {
+            if (window.innerWidth < 1024) {
+                alert("For a better experience, please use desktop mode.");
+            }
+        }
+
+        window.onload = checkDesktopMode;
     </script>
 </body>
 </html>
